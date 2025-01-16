@@ -7,10 +7,10 @@ export const userReducer = (state = [],action) => {
         case ADD_USER:
             return [...state,user];
         case EDIT_USER:
-            return state.map(user => {
-                if(user.id == user.id){
-                    user.name = user.name
-                    user.email = user.email
+            return state.map(u => {
+                if(u.id == user.id){
+                    u.name = user.name
+                    u.email = user.email
                 }
             });
         case DELETE_USER:
