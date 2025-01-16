@@ -19,8 +19,10 @@ export const userReducer = (state = [],action) => {
                 }
                 return u;
             });
+        // action delete user
         case DELETE_USER:
             return state.filter(u => u.id != user.id)
+        // if action is unknown don't change the state
         default:
             return state;
     }

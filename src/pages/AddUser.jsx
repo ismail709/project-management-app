@@ -10,11 +10,18 @@ import { store } from "../store";
 export default function AddUser(){
     const nameRef = useRef(null);
     const emailRef = useRef(null);
+    // create a dispatch shortcut for store.dispatch
+    // we don't have to create this function
+    // we can use store.dispatch() directly
     const dispatch = (action) => store.dispatch(action);
     const navigate = useNavigate();
     function handleSubmit(e){
         e.preventDefault();
+        // dispatch an action
         dispatch(
+            // the action is addUser
+            // we give the user object to the action
+            // it will be stored in the payload
             addUser(
                 {
                     id:Date.now(),
