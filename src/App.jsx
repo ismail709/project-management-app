@@ -4,8 +4,11 @@ import { store } from "./store";
 
 
 export default function App(){
+  // read state from the store
+  // state contain users and projects
   const {users,projects} = useMemo(() => store.getState(),[]);
   useEffect(()=>{
+    // print users and projects
     console.log("users ",users)
     console.log("projects ",projects)
   })
