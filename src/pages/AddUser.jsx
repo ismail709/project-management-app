@@ -18,6 +18,19 @@ export default function AddUser(){
     function handleSubmit(e){
         e.preventDefault();
         // dispatch an action
+        // this expression is the same as:
+        /*
+            dispatch(
+                {
+                    type:ADD_USER,
+                    payload:{
+                        id:Date.now(),
+                        name:nameRef.current.value,
+                        email:emailRef.current.value
+                    }
+                }
+            )
+        */
         dispatch(
             // the action is addUser
             // we give the user object to the action

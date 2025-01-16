@@ -11,6 +11,7 @@ export const projectReducer = (state = [],action) => {
                 if(p.id == project.id){
                     p.title = project.title;
                 }
+                return p;
             });
         case DELETE_PROJECT:
             return state.filter(p => p.id != project.id);
