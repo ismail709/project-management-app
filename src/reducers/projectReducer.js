@@ -2,17 +2,18 @@ import { ADD_PROJECT, DELETE_PROJECT, EDIT_PROJECT } from "../helpers/actionsTyp
 
 
 export const projectReducer = (state = [],action) => {
+    const project = action.payload;
     switch (action.type) {
         case ADD_PROJECT:
-            return [...state,action.payload];
+            return [...state,project];
         case EDIT_PROJECT:
-            return state.map(project => {
-                if(project.id == action.payload.id){
-                    project.title = action.payload.title;
+            return state.map(p => {
+                if(p.id == project.id){
+                    p.title = project.title;
                 }
             });
         case DELETE_PROJECT:
-            return state.filter(project => project.id != action.payload.id);
+            return state.filter(p => p.id != project.id);
         default:
             return state;
     }
