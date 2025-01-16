@@ -8,7 +8,7 @@ export const editUser = (user) => ({
     type:EDIT_USER,
     payload:user
 })
-export const deleteUser = (userId) => ({
+export const deleteUser = (user) => ({
     type:DELETE_USER,
-    payload:userId
+    payload:user
 })
